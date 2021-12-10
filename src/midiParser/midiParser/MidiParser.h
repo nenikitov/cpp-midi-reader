@@ -17,6 +17,9 @@ class MidiParser
         static uint8_t shiftBytes(std::vector<uint8_t>& bytes);
 
         static std::string readString(std::vector<uint8_t>& bytes, int length);
+        static uint16_t read16Uint(std::vector<uint8_t>& bytes);
+        static uint32_t read32UInt(std::vector<uint8_t>& bytes);
+        static uint64_t readNumber(std::vector<uint8_t>& bytes, int numBytes);
 };
 
 #endif
