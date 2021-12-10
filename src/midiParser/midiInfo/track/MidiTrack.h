@@ -9,7 +9,7 @@ class MidiTrack
     public:
         MidiTrack(std::vector<MidiEvent> events);
     public:
-        const std::vector<MidiTrack> const events;
+        const std::vector<MidiEvent> events;
 };
 
 #endif

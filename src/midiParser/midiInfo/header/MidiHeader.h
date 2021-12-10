@@ -8,7 +8,7 @@ class MidiHeader
     public:
         MidiHeader(MidiType type, int tickPerQuarter);
     public:
-        const MidiType const type;
+        const MidiType type;
         const int ticksPerQuarter;
 };
 

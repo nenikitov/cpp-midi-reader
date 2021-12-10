@@ -8,6 +8,7 @@ class BinaryReader
 {
     private:
         BinaryReader();
+        ~BinaryReader();
     public:
         static std::vector<uint8_t> readFile(const char* filePath);
 };
