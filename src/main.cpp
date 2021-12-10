@@ -1,16 +1,16 @@
 #include <iostream>
-#include "fileReader/FileReader.h"
+#include "binaryReader/BinaryReader.h"
 
 
 int main()
 {
-    const char* path = "midi/twinkle.mid";
+    const char* path = "res/twinkle.mid";
 
-    std::vector bytes = FileReader::readFile(path);
+    std::vector<uint8_t> bytes = BinaryReader::readFile(path);
 
     for (int i = 0; i < bytes.size(); i++)
     {
-        std::cout << bytes[i] << ", ";
+        std::cout << int(bytes[i]) << ", ";
     }
 
     std::cout << std::endl;
