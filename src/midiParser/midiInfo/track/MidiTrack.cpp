@@ -1,5 +1,5 @@
 #include "MidiTrack.h"
 
-MidiTrack::MidiTrack(std::vector<MidiEvent> events)
+MidiTrack::MidiTrack(std::vector<BaseMidiEvent> events)
     : events(events)
 {}
