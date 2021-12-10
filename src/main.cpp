@@ -5,7 +5,7 @@
 
 int main()
 {
-    const char* path = "res/onestop.mid";
+    const char* path = "res/twinkle.mid";
 
     std::vector<uint8_t> bytes = BinaryReader::readFile(path);
     MidiParser::parseMidi(bytes);
