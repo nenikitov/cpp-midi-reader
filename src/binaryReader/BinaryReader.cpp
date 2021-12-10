@@ -4,7 +4,7 @@
 
 std::vector<uint8_t> BinaryReader::readFile(const char* filePath)
 {
-    std::fstream fileData(filePath, std::fstream::in);
+    std::fstream fileData(filePath, std::fstream::in | std::ifstream::binary);
 
     std::vector<uint8_t> bytes;
 

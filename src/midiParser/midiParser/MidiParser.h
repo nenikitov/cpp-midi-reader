@@ -2,8 +2,9 @@
 #define MIDI_PARSER_H
 
 #include <vector>
+#include <string>
 #include <cstdint>
-#include "../../midiInfo/full/MidiData.h"
+#include "../midiInfo/full/MidiData.h"
 
 class MidiParser
 {
@@ -13,6 +14,9 @@ class MidiParser
         MidiParser();
         static MidiHeader parseHeader(std::vector<uint8_t>& bytes);
         static MidiTrack parseTrack(std::vector<uint8_t>& bytes);
+        static uint8_t shiftBytes(std::vector<uint8_t>& bytes);
+
+        static std::string readString(std::vector<uint8_t>& bytes, int length);
 };
 
 #endif
