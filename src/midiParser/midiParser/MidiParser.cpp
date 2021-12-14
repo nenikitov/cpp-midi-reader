@@ -63,7 +63,7 @@ MidiTrack MidiParser::parseTrack(std::vector<uint8_t>& bytes)
     uint32_t chunkLength = MidiParser::read32UInt(bytes);
 
     // Chunk data - events
-    std::vector<BaseMidiEvent> events;
+    std::vector<BaseTrackEvent> events;
 
     events.push_back(MidiParser::parseEvent(bytes));
 
@@ -71,9 +71,11 @@ MidiTrack MidiParser::parseTrack(std::vector<uint8_t>& bytes)
 }
 
 
-BaseMidiEvent MidiParser::parseEvent(std::vector<uint8_t>& bytes)
+BaseTrackEvent MidiParser::parseEvent(std::vector<uint8_t>& bytes)
 {
     uint64_t delta = MidiParser::readVariableLength(bytes);
+
+    /*
     uint8_t status = MidiParser::shiftBytes(bytes);
     uint8_t firstData = MidiParser::shiftBytes(bytes);
 
@@ -82,8 +84,9 @@ BaseMidiEvent MidiParser::parseEvent(std::vector<uint8_t>& bytes)
     std::cout << "Event" << std::endl;
     std::cout << "    " << delta << std::endl;
     std::cout << "    " << static_cast<int>(type) << std::endl;
+    */
 
-    return BaseMidiEvent(delta);
+    return BaseTrackEvent(delta, std::vector<uint8_t>());
 }
 
 

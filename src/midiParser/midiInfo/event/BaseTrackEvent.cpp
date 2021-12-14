@@ -1,11 +1,13 @@
-#include "BaseMidiEvent.h"
+#include "BaseTrackEvent.h"
 
 #include <stdexcept>
 
-BaseMidiEvent::BaseMidiEvent(uint64_t delta)
-    : delta(delta)
+BaseTrackEvent::BaseTrackEvent(uint64_t delta, std::vector<uint8_t> data)
+    : delta(delta),
+    data(data)
 {}
 
+/*
 MidiEventType BaseMidiEvent::getEventType(uint8_t status, uint8_t firstData)
 {
     if (status < 0x80)
@@ -41,3 +43,4 @@ MidiModeEventType BaseMidiEvent::getModeEventType(uint8_t firstData)
 {
     return static_cast<MidiModeEventType>(firstData);
 }
+*/

@@ -2,14 +2,14 @@
 #define MIDI_TRACK
 
 #include <vector>
-#include "../event/BaseMidiEvent.h"
+#include "../event/BaseTrackEvent.h"
 
 class MidiTrack
 {
     public:
-        MidiTrack(std::vector<BaseMidiEvent> events);
+        MidiTrack(std::vector<BaseTrackEvent> events);
     public:
-        const std::vector<BaseMidiEvent> events;
+        const std::vector<BaseTrackEvent> events;
 };
 
 #endif

@@ -14,7 +14,7 @@ class MidiParser
         MidiParser();
         static MidiHeader parseHeader(std::vector<uint8_t>& bytes);
         static MidiTrack parseTrack(std::vector<uint8_t>& bytes);
-        static BaseMidiEvent parseEvent(std::vector<uint8_t>& bytes);
+        static BaseTrackEvent parseEvent(std::vector<uint8_t>& bytes);
         static uint8_t shiftBytes(std::vector<uint8_t>& bytes);
 
 
