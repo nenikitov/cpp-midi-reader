@@ -7,11 +7,10 @@
 MidiData MidiParser::parseMidi(std::vector<uint8_t> bytes)
 {
     MidiHeader header = MidiParser::parseHeader(bytes);
-    std::cout << static_cast<int>(header.type) << " " << header.ticksPerQuarter << std::endl;
 
     MidiTrack track = MidiParser::parseTrack(bytes);
 
-    return MidiData(MidiHeader(MidiType::MULTI_TRACK, 100), std::vector<MidiTrack>());
+    return MidiData(header, std::vector<MidiTrack>());
 }
 
 MidiHeader MidiParser::parseHeader(std::vector<uint8_t>& bytes)
@@ -75,8 +74,14 @@ MidiTrack MidiParser::parseTrack(std::vector<uint8_t>& bytes)
 BaseMidiEvent MidiParser::parseEvent(std::vector<uint8_t>& bytes)
 {
     uint64_t delta = MidiParser::readVariableLength(bytes);
+    uint8_t status = MidiParser::shiftBytes(bytes);
+    uint8_t firstData = MidiParser::shiftBytes(bytes);
 
-    std::cout << delta << std::endl;
+    MidiEventType type = BaseMidiEvent::getEventType(status, firstData);
+
+    std::cout << "Event" << std::endl;
+    std::cout << "    " << delta << std::endl;
+    std::cout << "    " << static_cast<int>(type) << std::endl;
 
     return BaseMidiEvent(delta);
 }
@@ -135,9 +140,9 @@ uint64_t MidiParser::readVariableLength(std::vector<uint8_t>& bytes)
     {
         uint8_t byte = MidiParser::shiftBytes(bytes);
 
-        result |= (byte & 0x0FFF) << (56 - i);
+        result |= (byte & 0b01111111) << (56 - i);
 
-        if (! (byte & 0xF000))
+        if (! (byte & 0b10000000))
         {
             return result;
         }
