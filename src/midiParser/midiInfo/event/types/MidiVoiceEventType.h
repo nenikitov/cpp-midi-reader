@@ -9,6 +9,6 @@ enum class MidiVoiceEventType
     CONTROLLER       = 0xC0,
     CHANNEL_PRESSURE = 0xD0,
     PITCH_BEND       = 0xE0
-}
+};
 
 #endif

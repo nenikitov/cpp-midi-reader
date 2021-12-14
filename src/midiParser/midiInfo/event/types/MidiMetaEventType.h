@@ -17,6 +17,6 @@ enum class MidiMetaEventType
     SMTPE_OFFSET    = 0x54,
     TIME_SIGNATURE  = 0x58,
     KEY_SIGNATURE   = 0x59,
-}
+};
 
 #endif

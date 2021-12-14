@@ -11,6 +11,6 @@ enum class MidiModeEventType
     OMNI_MODE_ON     = 0x7D,
     MONO_MODE_ON     = 0x7E,
     POLY_MODE_ON     = 0x7F
-}
+};
 
 #endif

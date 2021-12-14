@@ -8,6 +8,6 @@ enum class MidiEventType
     MODE,
     SYS_EX,
     META
-}
+};
 
 #endif
