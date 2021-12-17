@@ -12,7 +12,11 @@ int main()
     BinaryStreamReader r(bytes);
 
     std::cout << r.readString(4) << std::endl;
-    std::cout << r.readRaw<int>() << std::endl;
+    std::cout << r.readRaw<uint32_t>() << std::endl;
+    std::cout << r.readRaw<uint16_t>() << std::endl;
+    std::cout << r.readRaw<uint16_t>() << std::endl;
+    std::cout << r.readRaw<uint16_t>() << std::endl;
+    std::cout << r.readString(4) << std::endl;
 
     /*
     for (size_t i = 0; i < bytes.size(); i++)
