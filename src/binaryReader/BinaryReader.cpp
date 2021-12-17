@@ -1,6 +1,8 @@
 #include "BinaryReader.h"
 
+
 #include <fstream>
+
 
 std::vector<uint8_t> BinaryReader::readFile(const char* filePath)
 {

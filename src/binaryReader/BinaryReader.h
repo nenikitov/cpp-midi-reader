@@ -1,8 +1,10 @@
 #ifndef BINARY_READER_H
 #define BINARY_READER_H
 
+
 #include <vector>
 #include <cstdint>
+
 
 class BinaryReader
 {
@@ -12,5 +14,6 @@ class BinaryReader
     public:
         static std::vector<uint8_t> readFile(const char* filePath);
 };
+
 
 #endif
