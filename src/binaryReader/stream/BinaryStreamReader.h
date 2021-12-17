@@ -39,9 +39,10 @@ T BinaryStreamReader::readRaw()
         uint8_t b[typeSize];
     } data;
 
-    for (long i = typeSize - 1; i >= 0; i--)
+    for (size_t i = 0; i < typeSize; i++)
     {
-        data.b[i] = shiftByte();
+        size_t byteIndex = typeSize - 1 - i;
+        data.b[byteIndex] = this->shiftByte();
     }
 
     return data.t;
