@@ -1,6 +1,6 @@
 #include "BaseMidiTrack.h"
 
 
-BaseMidiTrack::BaseMidiTrack(uint8_t data)
+BaseMidiTrack::BaseMidiTrack(std::vector<uint8_t> data)
     : BaseMidiObject(data)
     {};

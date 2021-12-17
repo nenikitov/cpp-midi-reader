@@ -4,16 +4,17 @@
 
 #include <cstdint>
 #include <string>
+#include <vector>
 
 
 class BaseMidiObject
 {
     public:
-        BaseMidiObject(uint8_t data);
+        BaseMidiObject(std::vector<uint8_t> data);
         virtual std::string toString() = 0;
 
     protected:
-        const uint8_t data;
+        const std::vector<uint8_t> data;
 };
 
 

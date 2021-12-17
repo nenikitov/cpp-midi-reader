@@ -1,10 +1,10 @@
-#include "BinaryReader.h"
+#include "BinaryFileReader.h"
 
 
 #include <fstream>
 
 
-std::vector<uint8_t> BinaryReader::readFile(const char* filePath)
+std::vector<uint8_t> BinaryFileReader::readFile(const char* filePath)
 {
     std::fstream fileData(filePath, std::fstream::in | std::ifstream::binary);
 

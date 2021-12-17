@@ -8,7 +8,7 @@
 class BaseMidiTrack : public BaseMidiObject
 {
     public:
-        BaseMidiTrack(uint8_t data);
+        BaseMidiTrack(std::vector<uint8_t> data);
 };
 
 

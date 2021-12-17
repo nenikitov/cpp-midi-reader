@@ -2,20 +2,23 @@
 #define HEADER_MIDI_TRACK_H
 
 
-#include "MidiDivisionType.h"
+#include "MidiDivisionUnit.h"
 #include "../base/BaseMidiTrack.h"
 
 
 class HeaderMidiTrack : public BaseMidiTrack
 {
     public:
-        HeaderMidiTrack(u_int8_t data);
+        HeaderMidiTrack(std::vector<u_int8_t> data);
         uint16_t getMidiFormat();
         uint16_t getNumTracks();
-        MidiDivisionType getDivisionType();
-        uint16_t getTicks();
+        MidiDivisionUnit getDivisionUnit();
+        uint16_t getTicksPerUnit();
     private:
         uint16_t midiFormat;
+        uint16_t numTracks;
+        MidiDivisionUnit divisionUnit;
+        uint16_t ticksPerUnit;
 };
 
 
