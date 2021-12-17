@@ -12,9 +12,10 @@ class BinaryFileReader
     public:
         static std::vector<uint8_t> readFile(const char* filePath);
 
-    private:
-        BinaryFileReader();
-        ~BinaryFileReader();
+        BinaryFileReader() = delete;
+        BinaryFileReader(const BinaryFileReader&) = delete;
+        ~BinaryFileReader() = delete;
+        BinaryFileReader& operator = (BinaryFileReader const&) = delete;
 };
 
 
