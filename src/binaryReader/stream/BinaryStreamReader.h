@@ -14,7 +14,7 @@ class BinaryStreamReader
         BinaryStreamReader(std::vector<uint8_t> bytes);
 
         template<class T>
-        T readNumber();
+        T readRaw();
         std::string readString(size_t length);
         uint64_t readVariableLength();
 
@@ -29,7 +29,7 @@ class BinaryStreamReader
 
 
 template<class T>
-T BinaryStreamReader::readNumber()
+T BinaryStreamReader::readRaw()
 {
     const size_t typeSize = sizeof(T);
 
@@ -39,7 +39,7 @@ T BinaryStreamReader::readNumber()
         uint8_t b[typeSize];
     } data;
 
-    for (int i = typeSize - 1; i >= 0; i--)
+    for (long i = typeSize - 1; i >= 0; i--)
     {
         data.b[i] = shiftByte();
     }

@@ -11,8 +11,8 @@ int main()
 
     BinaryStreamReader r(bytes);
 
-    std::cout << r.readNumber<int>() << std::endl;
-    std::cout << r.readNumber<int>() << std::endl;
+    std::cout << r.readRaw<int>() << std::endl;
+    std::cout << r.readRaw<int>() << std::endl;
 
     /*
     for (size_t i = 0; i < bytes.size(); i++)
