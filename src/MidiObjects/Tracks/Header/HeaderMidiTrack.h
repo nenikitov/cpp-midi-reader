@@ -14,6 +14,8 @@ class HeaderMidiTrack : public BaseMidiTrack
         uint16_t getNumTracks();
         MidiDivisionUnit getDivisionUnit();
         uint16_t getTicksPerUnit();
+        std::string toString();
+
     private:
         uint16_t midiFormat;
         uint16_t numTracks;

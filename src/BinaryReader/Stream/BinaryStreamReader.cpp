@@ -18,9 +18,9 @@ std::string BinaryStreamReader::readString(size_t length)
 {
     std::stringstream ss;
 
-    for (int i = 0; i < length; i++)
+    for (size_t i = 0; i < length; i++)
     {
-        ss << this->shiftByte();
+        ss << this->shiftByte() << " ";
     }
 
     return ss.str();
