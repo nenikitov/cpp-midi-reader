@@ -19,9 +19,8 @@ uint16_t computeTicksPerUnit(uint16_t division)
             return (division & 0x7FFF);
         case MidiDivisionUnit::SECOND:
         {
-            uint16_t frames = (division & 0x7F00) >> 8;
+            uint8_t frames = -(((division & 0x7F00) >> 8) + 0x80);
             uint8_t ticksPerFrame = (division & 0x00FF);
-            std::cout << int(ticksPerFrame) << std::endl;
             return frames * ticksPerFrame;
         }
         default:
