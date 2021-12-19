@@ -1,6 +1,6 @@
 #include <iostream>
-#include "binaryReader/file/BinaryFileReader.h"
-#include "binaryReader/stream/BinaryStreamReader.h"
+#include "BinaryReader/File/BinaryFileReader.h"
+#include "BinaryReader/Stream/BinaryStreamReader.h"
 
 
 int main()

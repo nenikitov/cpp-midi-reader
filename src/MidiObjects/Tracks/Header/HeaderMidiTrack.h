@@ -3,7 +3,7 @@
 
 
 #include "MidiDivisionUnit.h"
-#include "../base/BaseMidiTrack.h"
+#include "../Base/BaseMidiTrack.h"
 
 
 class HeaderMidiTrack : public BaseMidiTrack

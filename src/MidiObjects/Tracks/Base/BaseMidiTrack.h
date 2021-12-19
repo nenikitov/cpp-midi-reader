@@ -2,7 +2,7 @@
 #define BASE_MIDI_TRACK_H
 
 
-#include "../../base/BaseMidiObject.h"
+#include "../../Base/BaseMidiObject.h"
 
 
 class BaseMidiTrack : public BaseMidiObject
