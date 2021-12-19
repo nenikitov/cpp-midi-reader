@@ -1,7 +1,7 @@
 #include <iostream>
 #include "BinaryReader/File/BinaryFileReader.h"
 #include "BinaryReader/Stream/BinaryStreamReader.h"
-#include "MidiObjects/Tracks/Header/HeaderMidiTrack.h"
+#include "MidiObjects/Chunks/Header/HeaderMidiChunk.h"
 
 
 int main()
@@ -12,18 +12,7 @@ int main()
 
     BinaryStreamReader r(bytes);
 
-    std::vector<uint8_t> a;
-    // Type
-    a.push_back(0x00);
-    a.push_back(0x00);
-    // Tracks
-    a.push_back(0x00);
-    a.push_back(0x01);
-    // Division
-    a.push_back(0xE7);
-    a.push_back(0x28);
-
-    HeaderMidiTrack t(a);
+    HeaderMidiChunk t(10, 12, MidiDivisionUnit::QUARTER_NOTE, 2000);
 
     std::cout << t.toString() << std::endl;
 

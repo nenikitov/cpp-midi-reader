@@ -10,11 +10,7 @@
 class BaseMidiObject
 {
     public:
-        BaseMidiObject(std::vector<uint8_t> data);
-        virtual std::string toString();
-
-    protected:
-        const std::vector<uint8_t> data;
+        virtual std::string toString() = 0;
 };
 
 
